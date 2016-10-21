@@ -4,8 +4,8 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'new-meal',
   template: `
-    <h2>Add a Meal</h2>
-    <div *ngIf="show" class="well">
+    <div class="well">
+      <h2>Add a Meal</h2>
       <div class="form-group">
         <label for="mealName">Foods You Ate</label>
         <input #mealName type="text" class="form-control">
@@ -28,7 +28,7 @@ import { Meal } from './meal.model';
         <input #calories type="number" class="form-control">
       </div>
       <button class = "btn" (click)="
-      addClicked(mealName.value, details.value);
+      addClicked(mealName.value, details.value, mealType.value, calories.value);
       ">Add</button>
     </div>
   `
@@ -39,6 +39,13 @@ export class NewMealComponent {
   @Input() show: boolean;
 
   addClicked(mealName: string, details: string, mealType: string, calories: string) {
-    this.newMealSender.emit(mealName);
+    if (mealName == "" || details == "" || calories == null) {
+      alert("Please fill out the entire form.");
+    } else {
+      var numCals: number = parseInt(calories);
+      var newMealToAdd: Meal = new Meal(mealName, details, mealType, numCals);
+      this.newMealSender.emit(mealName);
+    }
+
   }
 }
