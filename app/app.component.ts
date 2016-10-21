@@ -8,6 +8,7 @@ import { Meal } from './meal.model';
     <div class = "jumbotron">
       <h1>Meal Tracker</h1>
       <new-meal
+        [childNewFormShow] = "newFormShow"
         (newMealSender) = "addMeal($event)"
       ></new-meal>
     </div>
@@ -16,7 +17,7 @@ import { Meal } from './meal.model';
     ></meal-display>
     <all-foods
       [childMealList] = "allMeals"
-      (editClickSender) = "showEditForm"
+      (editClickSender) = "showEditForm($event)"
     ></all-foods>
   </div>
   `
@@ -30,5 +31,15 @@ export class AppComponent {
   addMeal(newMealFromChild: Meal) {
     this.allMeals.push(newMealFromChild);
     console.log(this.allMeals);
+  }
+
+  editFormShow: boolean = false;
+  newFormShow: boolean = true;
+  selectedMeal: Meal = null;
+
+  showEditForm(clickedMeal: Meal) {
+    this.selectedMeal = clickedMeal;
+    this.editFormShow = true;
+    this.newFormShow = false;
   }
 }
