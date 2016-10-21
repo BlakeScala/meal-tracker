@@ -11,7 +11,7 @@ import { Meal } from './meal.model';
       </div>
       <div class="row">
         <div class="col-md-6">
-          <div *ngFor="let currentMeal of childMealList">
+          <div *ngFor="let currentMeal of childMealList | calories: calorieFilter">
             <p class="listedMeal">
               <button (click) = "editButtonClicked(currentMeal)">Edit</button>
               {{currentMeal.name}}
@@ -19,7 +19,7 @@ import { Meal } from './meal.model';
           </div>
         </div>
         <div class="col-md-6">
-          <div *ngFor="let currentMeal of childMealList">
+          <div *ngFor="let currentMeal of childMealList | calories: calorieFilter">
             <p class="listedMeal">{{currentMeal.calories}} Calories</p>
           </div>
         </div>
@@ -31,7 +31,7 @@ import { Meal } from './meal.model';
 export class AllFoodsComponent {
   @Input() childMealList: Meal[];
   @Output() editClickSender = new EventEmitter();
-
+  @Input() calorieFilter: string;
   editButtonClicked(mealToEdit: Meal) {
     this.editClickSender.emit(mealToEdit);
   }

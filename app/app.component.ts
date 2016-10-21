@@ -23,6 +23,7 @@ import { Meal } from './meal.model';
     <all-foods
       [childMealList] = "allMeals"
       (editClickSender) = "showEditForm($event)"
+      [calorieFilter] = "selectedCalories"
     ></all-foods>
     <br>
     <meal-display
