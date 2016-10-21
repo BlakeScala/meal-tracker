@@ -5,22 +5,22 @@ import { Meal } from './meal.model';
   selector: 'new-meal',
   template: `
     <div *ngIf="childNewFormShow">
-      <div class="well" id="mealForm">
-        <h2>Add a Meal</h2>
+      <div class="well mealForm">
+        <h2>Add Foods</h2>
         <div class = "row">
-          <div class = "col-md-3">
+          <div class = "col-sm-3">
             <div class="form-group">
-              <label for="mealName">Foods You Ate</label>
+              <label for="mealName">Food(s) You Ate</label>
               <input #mealName type="text" class="form-control">
             </div>
           </div>
-          <div class = "col-md-3">
+          <div class = "col-sm-3">
             <div class="form-group">
               <label for="details">Details</label>
               <input #details type="text" class="form-control">
             </div>
           </div>
-          <div class = "col-md-3">
+          <div class = "col-sm-3">
             <div class="form-group">
               <label for="mealType">Which meal was it?</label>
               <select #mealType class="form-control">
@@ -31,7 +31,7 @@ import { Meal } from './meal.model';
               </select>
             </div>
           </div>
-          <div class = "col-md-3">
+          <div class = "col-sm-3">
             <div class="form-group">
               <label for="calories">Number of Calories</label>
               <input #calories type="number" class="form-control">

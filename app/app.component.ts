@@ -11,14 +11,20 @@ import { Meal } from './meal.model';
         [childNewFormShow] = "newFormShow"
         (newMealSender) = "addMeal($event)"
       ></new-meal>
+      <edit-meal
+        [childEditFormShow] = "editFormShow"
+        [childSelectedMeal] = "selectedMeal"
+        (editClickSender) = "editDone()"
+      ></edit-meal>
     </div>
-    <meal-display
-      [childMealList] = "allMeals"
-    ></meal-display>
     <all-foods
       [childMealList] = "allMeals"
       (editClickSender) = "showEditForm($event)"
     ></all-foods>
+    <br>
+    <meal-display
+      [childMealList] = "allMeals"
+    ></meal-display>
   </div>
   `
 })
@@ -41,5 +47,11 @@ export class AppComponent {
     this.selectedMeal = clickedMeal;
     this.editFormShow = true;
     this.newFormShow = false;
+  }
+
+  editDone() {
+    this.selectedMeal = null;
+    this.editFormShow = false;
+    this.newFormShow = true;
   }
 }

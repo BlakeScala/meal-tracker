@@ -10,14 +10,16 @@ import { Meal } from './meal.model';
         <h2>Add some foods you ate to see today's intake.</h2>
       </div>
       <div class="row">
-        <div *ngFor="let currentMeal of childMealList">
-          <div class="col-md-6">
+        <div class="col-md-6">
+          <div *ngFor="let currentMeal of childMealList">
             <p class="listedMeal">
               <button (click) = "editButtonClicked(currentMeal)">Edit</button>
               {{currentMeal.name}}
             </p>
           </div>
-          <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
+          <div *ngFor="let currentMeal of childMealList">
             <p class="listedMeal">{{currentMeal.calories}} Calories</p>
           </div>
         </div>
