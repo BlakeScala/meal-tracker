@@ -4,7 +4,7 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'new-meal',
   template: `
-    <div class="well">
+    <div *ngIf="show" class="well">
       <h2>Add a Meal</h2>
       <div class="form-group">
         <label for="mealName">Foods You Ate</label>
@@ -44,7 +44,8 @@ export class NewMealComponent {
     } else {
       var numCals: number = parseInt(calories);
       var newMealToAdd: Meal = new Meal(mealName, details, mealType, numCals);
-      this.newMealSender.emit(mealName);
+      console.log(newMealToAdd.mealType);
+      this.newMealSender.emit(newMealToAdd);
     }
 
   }

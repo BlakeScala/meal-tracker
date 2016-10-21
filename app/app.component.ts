@@ -7,16 +7,21 @@ import { Meal } from './meal.model';
   <div class="container">
     <h1>Meal Tracker</h1>
     <button (click)="showMealForm()">Add a Meal</button>
-    <new-meal>
+    <new-meal
       [show] = "showNewMealForm"
       (newMealSender) = "addMeal($event)"
-    </new-meal>
+    ></new-meal>
+    <meal-display
+      [childMealList] = "allMeals"
+    ></meal-display>
   </div>
   `
 })
 
 export class AppComponent {
-  allMeals: Meal[] = [];
+  allMeals: Meal[] = [
+    new Meal("Tofu", "good", "Breakfast", 200)
+  ];
 
   showNewMealForm: boolean = false;
 
@@ -27,5 +32,6 @@ export class AppComponent {
   addMeal(newMealFromChild: Meal) {
     this.allMeals.push(newMealFromChild);
     this.showNewMealForm = false;
+    console.log(this.allMeals);
   }
 }
