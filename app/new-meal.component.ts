@@ -38,6 +38,9 @@ import { Meal } from './meal.model';
         </div>
         <button class = "btn" (click)="
         addClicked(mealName.value, details.value, mealType.value, calories.value);
+        mealName.value='';
+        details.value='';
+        calories.value='';
         ">Add</button>
       </div>
     </div>
@@ -57,6 +60,5 @@ export class NewMealComponent {
       console.log(newMealToAdd.mealType);
       this.newMealSender.emit(newMealToAdd);
     }
-
   }
 }

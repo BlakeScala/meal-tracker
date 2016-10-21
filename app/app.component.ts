@@ -14,12 +14,18 @@ import { Meal } from './meal.model';
     <meal-display
       [childMealList] = "allMeals"
     ></meal-display>
+    <all-foods
+      [childMealList] = "allMeals"
+      (editClickSender) = "showEditForm"
+    ></all-foods>
   </div>
   `
 })
 
 export class AppComponent {
-  allMeals: Meal[] = [];
+  allMeals: Meal[] = [
+    new Meal("Cheerios and Soy Milk", "Silk Brand", "Breakfast", 240)
+  ];
 
   addMeal(newMealFromChild: Meal) {
     this.allMeals.push(newMealFromChild);

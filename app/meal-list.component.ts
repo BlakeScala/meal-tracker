@@ -8,46 +8,55 @@ import { Meal } from './meal.model';
       <div class = "row">
         <div class = "col-md-3" id= "breakDiv">
           <h2>Breakfast</h2>
-          <div *ngFor ="let currentMeal of childMealList">
-            <div *ngIf="currentMeal.mealType === 'Breakfast'">
-              <div class = "mealDiv">
-                <h4> {{currentMeal.name}}</h4>
-                <p> {{currentMeal.calories}}</p>
+          <ul>
+            <div *ngFor ="let currentMeal of childMealList">
+              <div *ngIf="currentMeal.mealType === 'Breakfast'">
+                <div class = "mealDiv">
+                  <li>{{currentMeal.name}} : {{currentMeal.calories}} calories</li>
+                  <p>Details: {{currentMeal.details}}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </ul>
         </div>
         <div class = "col-md-3" id="lunchDiv">
           <h2>Lunch</h2>
-          <div *ngFor ="let currentMeal of childMealList">
-            <div *ngIf="currentMeal.mealType === 'Lunch'">
-              <div class = "mealDiv">
-                <h4> {{currentMeal.name}}</h4>
-                <p> {{currentMeal.calories}}</p>
+          <ul>
+            <div *ngFor ="let currentMeal of childMealList">
+              <div *ngIf="currentMeal.mealType === 'Lunch'">
+                <div class = "mealDiv">
+                  <li>{{currentMeal.name}} : {{currentMeal.calories}} calories</li>
+                  <p>Details: {{currentMeal.details}}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </ul>
         </div>
         <div class = "col-md-3" id="dinnerDiv">
           <h2>Dinner</h2>
-          <div *ngFor ="let currentMeal of childMealList">
-            <div *ngIf="currentMeal.mealType === 'Dinner'">
-              <div class = "mealDiv">
-                <h4> {{currentMeal.name}} : {{currentMeal.calories}} calories</h4>
+          <ul>
+            <div *ngFor ="let currentMeal of childMealList">
+              <div *ngIf="currentMeal.mealType === 'Dinner'">
+                <div class = "mealDiv">
+                  <li>{{currentMeal.name}} : {{currentMeal.calories}} calories</li>
+                  <p>Details: {{currentMeal.details}}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </ul>
         </div>
         <div class = "col-md-3" id="snackDiv">
           <h2>Snack</h2>
-          <div *ngFor ="let currentMeal of childMealList">
-            <div *ngIf="currentMeal.mealType === 'Snack'">
-              <div class = "mealDiv">
-                <h4> {{currentMeal.name}}</h4>
-                <p> {{currentMeal.calories}}</p>
+          <ul>
+            <div *ngFor ="let currentMeal of childMealList">
+              <div *ngIf="currentMeal.mealType === 'Snack'">
+                <div class = "mealDiv">
+                  <li>{{currentMeal.name}} : {{currentMeal.calories}} calories</li>
+                  <p>Details: {{currentMeal.details}}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </ul>
         </div>
       </div>
     </div>
