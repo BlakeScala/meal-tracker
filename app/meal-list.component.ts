@@ -10,7 +10,10 @@ import { Meal } from './meal.model';
           <h2>Breakfast</h2>
           <div *ngFor ="let currentMeal of childMealList">
             <div *ngIf="currentMeal.mealType === 'Breakfast'">
-              <h3> {{currentMeal.name}}</h3>
+              <div class = "mealDiv">
+                <h4> {{currentMeal.name}}</h4>
+                <p> {{currentMeal.calories}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -18,7 +21,10 @@ import { Meal } from './meal.model';
           <h2>Lunch</h2>
           <div *ngFor ="let currentMeal of childMealList">
             <div *ngIf="currentMeal.mealType === 'Lunch'">
-              <h3> {{currentMeal.name}}</h3>
+              <div class = "mealDiv">
+                <h4> {{currentMeal.name}}</h4>
+                <p> {{currentMeal.calories}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -26,7 +32,9 @@ import { Meal } from './meal.model';
           <h2>Dinner</h2>
           <div *ngFor ="let currentMeal of childMealList">
             <div *ngIf="currentMeal.mealType === 'Dinner'">
-              <h3> {{currentMeal.name}}</h3>
+              <div class = "mealDiv">
+                <h4> {{currentMeal.name}} : {{currentMeal.calories}} calories</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -34,7 +42,10 @@ import { Meal } from './meal.model';
           <h2>Snack</h2>
           <div *ngFor ="let currentMeal of childMealList">
             <div *ngIf="currentMeal.mealType === 'Snack'">
-              <h3> {{currentMeal.name}}</h3>
+              <div class = "mealDiv">
+                <h4> {{currentMeal.name}}</h4>
+                <p> {{currentMeal.calories}}</p>
+              </div>
             </div>
           </div>
         </div>

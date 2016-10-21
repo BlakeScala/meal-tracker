@@ -6,30 +6,40 @@ import { Meal } from './meal.model';
   template: `
     <div class="well" id="mealForm">
       <h2>Add a Meal</h2>
-      <div class="form-group">
-        <label for="mealName">Foods You Ate</label>
-        <input #mealName type="text" class="form-control">
+      <div class = "row">
+        <div class = "col-md-3">
+          <div class="form-group">
+            <label for="mealName">Foods You Ate</label>
+            <input #mealName type="text" class="form-control">
+          </div>
+        </div>
+        <div class = "col-md-3">
+          <div class="form-group">
+            <label for="details">Details</label>
+            <input #details type="text" class="form-control">
+          </div>
+        </div>
+        <div class = "col-md-3">
+          <div class="form-group">
+            <label for="mealType">Which meal was it?</label>
+            <select #mealType class="form-control">
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Snack">Snack</option>
+            </select>
+          </div>
+        </div>
+        <div class = "col-md-3">
+          <div class="form-group">
+            <label for="calories">Number of Calories</label>
+            <input #calories type="number" class="form-control">
+          </div>
+        </div>
+        <button class = "btn" (click)="
+        addClicked(mealName.value, details.value, mealType.value, calories.value);
+        ">Add</button>
       </div>
-      <div class="form-group">
-        <label for="details">Details</label>
-        <input #details type="text" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="mealType">Which meal did you eat this for?</label>
-        <select #mealType class="form-control">
-          <option value="Breakfast">Breakfast</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Dinner">Dinner</option>
-          <option value="Snack">Snack</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="calories">Number of Calories</label>
-        <input #calories type="number" class="form-control">
-      </div>
-      <button class = "btn" (click)="
-      addClicked(mealName.value, details.value, mealType.value, calories.value);
-      ">Add</button>
     </div>
   `
 })
