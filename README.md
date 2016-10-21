@@ -1,3 +1,4 @@
+# Calorie Tracker
 
 ### Description
 Application that lets users keep track of the foods they eat and their daily calorie intake.
