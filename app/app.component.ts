@@ -5,8 +5,10 @@ import { Meal } from './meal.model';
   selector: 'my-app',
   template: `
   <div class="container">
-    <h1>Meal Tracker</h1>
-    <button (click)="showMealForm()">Add a Meal</button>
+    <div class = "jumbotron">
+      <h1>Meal Tracker</h1>
+      <button (click)="showMealForm()">Add a Meal</button>
+    </div>
     <new-meal
       [show] = "showNewMealForm"
       (newMealSender) = "addMeal($event)"
@@ -19,9 +21,7 @@ import { Meal } from './meal.model';
 })
 
 export class AppComponent {
-  allMeals: Meal[] = [
-    new Meal("Tofu", "good", "Breakfast", 200)
-  ];
+  allMeals: Meal[] = [];
 
   showNewMealForm: boolean = false;
 
