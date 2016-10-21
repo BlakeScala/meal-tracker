@@ -8,6 +8,7 @@ import { Meal } from './meal.model';
       <h2>Add some foods you ate to see today's intake.</h2>
     </div>
     <div class="row">
+    <h2> {{ totalCalories }} Total Calories Today</h2>
       <div class="col-md-6">
         <div *ngFor="let currentMeal of childMealList | calories: calorieFilter">
           <p class="listedMeal">
@@ -29,6 +30,8 @@ export class AllFoodsComponent {
   @Input() childMealList: Meal[];
   @Output() editClickSender = new EventEmitter();
   @Input() calorieFilter: string;
+  @Input() totalCalories: number;
+
   editButtonClicked(mealToEdit: Meal) {
     this.editClickSender.emit(mealToEdit);
   }

@@ -87,3 +87,13 @@ meal-filter {
     margin-bottom: 20px;
   }
 }
+
+all-foods {
+  p{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  button {
+    margin-right: 20px;
+  }
+}
