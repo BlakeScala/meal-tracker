@@ -17,14 +17,17 @@ import { Meal } from './meal.model';
         (editClickSender) = "editDone()"
       ></edit-meal>
     </div>
-    <meal-filter
-      (calorieFilterSender) = "selectCalories($event)"
-    ></meal-filter>
-    <all-foods
-      [childMealList] = "allMeals"
-      (editClickSender) = "showEditForm($event)"
-      [calorieFilter] = "selectedCalories"
-    ></all-foods>
+    <div id="allMeals">
+      <h1>Today's Intake</h1>
+      <meal-filter
+        (calorieFilterSender) = "selectCalories($event)"
+      ></meal-filter>
+      <all-foods
+        [childMealList] = "allMeals"
+        (editClickSender) = "showEditForm($event)"
+        [calorieFilter] = "selectedCalories"
+      ></all-foods>
+    </div>
     <br>
     <meal-display
       [childMealList] = "allMeals"
