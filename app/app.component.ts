@@ -17,6 +17,9 @@ import { Meal } from './meal.model';
         (editClickSender) = "editDone()"
       ></edit-meal>
     </div>
+    <meal-filter
+      (calorieFilterSender) = "selectCalories($event)"
+    ></meal-filter>
     <all-foods
       [childMealList] = "allMeals"
       (editClickSender) = "showEditForm($event)"
@@ -42,6 +45,7 @@ export class AppComponent {
   editFormShow: boolean = false;
   newFormShow: boolean = true;
   selectedMeal: Meal = null;
+  selectedCalories: string = "All";
 
   showEditForm(clickedMeal: Meal) {
     this.selectedMeal = clickedMeal;
@@ -53,5 +57,9 @@ export class AppComponent {
     this.selectedMeal = null;
     this.editFormShow = false;
     this.newFormShow = true;
+  }
+
+  selectCalories(childSelectedCalories: string) {
+    this.selectedCalories = childSelectedCalories;
   }
 }
